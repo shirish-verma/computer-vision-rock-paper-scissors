@@ -8,7 +8,7 @@ def get_computer_choice():
     return computer_choice
 
 def get_user_choice():
-    rps_choices = ['rock', 'paper', 'scissors']
+    rps_choices = ['Rock', 'Paper', 'Scissors']
     while True:
         user_choice = input("Player 1: Rock, Paper or Scissors? >> ").title()
         if user_choice in rps_choices:
