@@ -18,11 +18,11 @@ def get_user_choice():
 
 def get_winner(computer_choice, user_choice):
     if computer_choice == user_choice:
-        return f'It is a tie!'
+        print('It is a tie!')
     elif (computer_choice == 'Rock' and user_choice == 'Scissors') or (computer_choice == 'Paper' and user_choice == 'Rock') or (computer_choice == 'Scissors' and user_choice == 'Paper'):
-        return f'You lost'
+        print('You lost')
     else:
-        return f'You won!'
+        print('You won!')
 
 print(get_winner('Rock', 'Paper'))
 print(get_winner('Paper', 'Rock'))
