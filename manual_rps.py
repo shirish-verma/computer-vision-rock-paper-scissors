@@ -24,12 +24,10 @@ def get_winner(computer_choice, user_choice):
     else:
         print('You won!')
 
-print(get_winner('Rock', 'Paper'))
-print(get_winner('Paper', 'Rock'))
-print(get_winner('Rock', 'Scissors'))
-print(get_winner('Scissors', 'Paper'))
-print(get_winner('Paper', 'Paper'))
-print(get_winner('Paper', 'Scissors'))
+def play():
+    computer = get_computer_choice()
+    user = get_user_choice()
+    get_winner(computer, user)
 
-
+play()
 
