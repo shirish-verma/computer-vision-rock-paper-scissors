@@ -57,19 +57,24 @@ def play():
 def rps_match():
     computer_wins = 0
     user_wins = 0
-    for round in range(5):
+    rounds_played = 0
+    while rounds_played < 5:
         round_result = play()
+        rounds_played += 1
         if round_result == 1:
             computer_wins += 1
         elif round_result == 2:
             user_wins += 1
-        elif (computer_wins or user_wins) == 3:
-            print(f'Computer: {computer_wins}, User: {user_wins}')
+        elif computer_wins == 3:
+            print(f'You lost the match. Computer : {computer_wins}, User: {user_wins}')
             break
-        print(f'End of round {round + 1}')
+        elif user_wins == 3:
+            print(f'You won the match! Computer : {computer_wins}, User: {user_wins}')
+            break
+    print('Game over!')
+    print(f'Computer: {computer_wins}, User: {user_wins}')
     cap.release() # After the loop release the cap object
     cv2.destroyAllWindows() # Destroy all the windows
-    print('Game over. All 5 rounds have been played!')
-    print(f'Computer: {computer_wins}, User: {user_wins}')
+    
 
 rps_match()
