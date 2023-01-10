@@ -2,6 +2,7 @@ import random
 import cv2
 from keras.models import load_model
 import numpy as np
+import time
 model = load_model('./keras_model.h5')
 cap = cv2.VideoCapture(0)
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
@@ -24,6 +25,7 @@ def get_prediction():
     result = max(set(pred_list), key=pred_list.count)
     labels = {0: 'Rock', 1: 'Paper', 2: 'Scissors', 3: 'Nothing'}
     user_choice = labels[result]
+    print(user_choice)
     return user_choice
 
 def get_user_choice():
@@ -49,6 +51,8 @@ def play():
     user = get_user_choice()
     get_winner(computer, user)
 
-play()
+seconds = time.time()
+
+get_prediction()
 
 
