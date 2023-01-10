@@ -24,16 +24,11 @@ def get_prediction():
         elasped_time = time.time() - start_time
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break    
-    cap.release() # After the loop release the cap object
-    cv2.destroyAllWindows() # Destroy all the windows
     result = max(set(pred_list), key=pred_list.count)
     labels = {0: 'Rock', 1: 'Paper', 2: 'Scissors', 3: 'Nothing'}
     user_choice = labels[result]
     print(user_choice)
     return user_choice
-
-def get_user_choice():
-    return get_prediction()
 
 def get_computer_choice():
     rps_choices = ['Rock', 'Paper', 'Scissors']
@@ -55,14 +50,14 @@ def get_winner(computer_choice, user_choice):
         return 2
 
 def play():
-    user = get_user_choice()
+    user = get_prediction()
     computer = get_computer_choice()
-    get_winner(computer, user)
+    return get_winner(computer, user)
 
 def rps_match():
     computer_wins = 0
     user_wins = 0
-    for round in range(2):
+    for round in range(5):
         round_result = play()
         if round_result == 1:
             computer_wins += 1
@@ -72,6 +67,8 @@ def rps_match():
             print(f'Computer: {computer_wins}, User: {user_wins}')
             break
         print(f'End of round {round + 1}')
+    cap.release() # After the loop release the cap object
+    cv2.destroyAllWindows() # Destroy all the windows
     print('Game over. All 5 rounds have been played!')
     print(f'Computer: {computer_wins}, User: {user_wins}')
 
