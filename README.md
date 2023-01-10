@@ -31,5 +31,7 @@ Using the if-elif-else statements, created the script to choose a winner based o
 
 All of the code programmed is then wrapped in one function. Created and called a new function called play. Inside the function, called all the other three functions created thus far (get_computer_choice, get_user_choice, and get_winner). Now when the codes, it starts a game of Rock-Paper-Scissors, and it prints whether the computer or user won.
 
+![](code_snap_1.jpg)
+
 # Milestone 5
 
